@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.nestor.web.mvc.entity.Alumnos;
 import com.nestor.web.mvc.service.AlumnosService;
+import com.nestor.web.mvc.service.ProyectoService;
 
 
 @Controller
@@ -68,6 +69,15 @@ public class AlumnosController {
 	}
 	
 	
+	
+	@Autowired
+	private ProyectoService proyectoService;
+	
+	@GetMapping("/proyectos")
+	public String listarProyectos(Model modelo) {
+		modelo.addAttribute("lista_proyectos", proyectoService.buscarProyectos());
+		return "proyectos";
+	}
 	
 	
 	

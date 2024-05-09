@@ -2,6 +2,7 @@ package com.nestor.web.mvc.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,10 +19,15 @@ import jakarta.persistence.Table;
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
+		@Column(nullable=false, length=150)
 		private String nombre;
+		@Column(nullable=false, length=150)
 		private String descripcion;
+		@Column(nullable=false, length=150)
 		private String fecha_inicio;
+		@Column(nullable=false, length=150)
 		private String fecha_fin;
+		@Column(nullable=false, length=150)
 		private boolean activo;
 		
 		
